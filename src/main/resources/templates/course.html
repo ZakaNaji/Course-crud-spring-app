@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Courses</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body class="container">
+<h1 class="my-3">Courses</h1>
+<h2 class="my-3" th:text="'Welcome ' + ${username}"></h2>
+<table class="table">
+    <thead class="thead-dark">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Duration</th>
+        <th>Fee</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="course : ${courses}">
+        <td th:text="${course.id}"></td>
+        <td th:text="${course.name}"></td>
+        <td th:text="${course.duration}"></td>
+        <td th:text="${course.fee}"></td>
+        <td>
+            <a th:href="@{/course/update/{id}(id=${course.id})}" class="btn btn-primary">Update</a>
+            <a th:href="@{/course/delete/{id}(id=${course.id})}" class="btn btn-danger">Delete</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<a href="/course/add" class="btn btn-primary mt-3">Add Course</a>
+</body>
+</html>
