@@ -7,6 +7,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body class="container">
+<div th:include="~{header :: body}"></div>
 <h1 class="my-3">Courses</h1>
 <h2 class="my-3" th:text="'Welcome ' + ${username}"></h2>
 <table class="table">

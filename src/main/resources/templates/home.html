@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body class="container">
+<div th:include="~{header :: body}"></div>
+<h1 class="my-3">Welcome to MyCourses, <span th:text="${username}"></span>!</h1>
+<p>
+    <a href="/login" class="btn btn-primary">Login</a>
+    <a href="/course" class="btn btn-secondary">View Courses</a>
+</p>
+</body>
+</html>
